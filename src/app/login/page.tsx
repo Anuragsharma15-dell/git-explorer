@@ -1,6 +1,6 @@
 "use client";
 
-import { signIn,signOut } from "next-auth/react";
+import { signIn } from "next-auth/react";
 import { motion } from "framer-motion";
 import { Github, LayoutDashboard, ShieldCheck, Zap } from "lucide-react";
 import { TamboLogo } from "@/components/tambo/logo";
