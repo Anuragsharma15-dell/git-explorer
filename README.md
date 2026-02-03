@@ -1,7 +1,7 @@
 # GitHub Explorer x Tambo 🚀
 
 <div align="center">
-  <img src="public/app-screenshot.png" alt="GitHub Explorer Dashboard" width="100%" />
+  <img src="https://github.com/user-attachments/assets/f11e5a44-9fc0-4fa5-9dd8-f1d8d13d4a99" alt="GitHub Explorer Dashboard" width="100%" />
 
   **Master your repositories conversationally.**
   <br/>
@@ -19,6 +19,10 @@
 Instead of navigating through static tabs for Issues, Pull Requests, and Insights, you simply **ask** for what you need. The application doesn't just reply with text; it **generates custom interactive interfaces** on the fly tailored to your specific intent.
 
 Need to triage bugs? It builds a **Kanban Board** for you. Reviewing code? It spawns a **Diff Viewer**. Analyzing trends? It renders **Interactive Charts**.
+
+## 🎥 Demo
+
+https://github.com/user-attachments/assets/4af35274-7c53-42c7-b725-11622598ef28
 
 ## ✨ Features
 
@@ -100,6 +104,22 @@ graph TD
    NEXT_PUBLIC_TAMBO_API_KEY=your_key_here
    GITHUB_TOKEN=your_github_pat_here
    ```
+
+#### API Keys Setup
+
+**Tambo API Key**
+
+<img src="https://github.com/user-attachments/assets/ce0580cb-2049-4653-ac93-0ce406049818" alt="Tambo Setup" width="600" />
+
+1. Sign up on [Tambo](https://tambo.co)
+2. Create a Project and then Generate an API Key
+
+**GitHub Token Setup**
+
+<img src="https://github.com/user-attachments/assets/db9ffe57-2e7e-4bd8-b63f-bf9ce9c9fdfa" alt="GitHub Setup" width="600" />
+
+1. Go to GitHub Settings > Developer settings > Personal access tokens(Fine-grained tokens)
+2. Generate a new token.
 
 4. **Run Locally**
    ```bash
