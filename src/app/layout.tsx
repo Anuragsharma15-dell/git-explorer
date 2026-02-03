@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import "@/lib/utils"; // Import polyfills
+import "@/lib/utils";
 import { Providers } from "@/components/providers";
 
 const geistSans = Geist({
@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body
