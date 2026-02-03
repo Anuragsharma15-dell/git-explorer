@@ -19,6 +19,7 @@
     "@tambo-ai/react": "^0.46.3",
     "@tambo-ai/typescript-sdk": "^0.69.0",
     "class-variance-authority": "^0.7.1",
+    "date-fns": "^4.1.0",
     "dompurify": "^3.2.6",
     "framer-motion": "^12.23.12",
     "highlight.js": "^11.11.1",
