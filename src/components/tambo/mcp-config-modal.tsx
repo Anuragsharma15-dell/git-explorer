@@ -207,9 +207,8 @@ function MyApp() {
                 Setup Instructions
               </span>
               <ChevronDown
-                className={`w-4 h-4 text-foreground transition-transform duration-200 ${
-                  showInstructions ? "rotate-180" : ""
-                }`}
+                className={`w-4 h-4 text-foreground transition-transform duration-200 ${showInstructions ? "rotate-180" : ""
+                  }`}
               />
             </button>
             {showInstructions && (
@@ -489,6 +488,8 @@ export function useMcpServers(): McpServer[] {
       const uniqueUrls = new Set();
       return servers.filter((server: McpServer) => {
         const url = typeof server === "string" ? server : server.url;
+        // Filter out invalid GitHub profile URLs which users often mistake for MCP endpoints
+        if (url.includes("github.com/Anuragsharma15-dell")) return false;
         if (uniqueUrls.has(url)) return false;
         uniqueUrls.add(url);
         return true;
