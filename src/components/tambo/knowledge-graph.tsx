@@ -32,12 +32,20 @@ export function KnowledgeGraph({ data, title = "Codebase Knowledge Graph" }: Kno
     // Simple force layout simulation (static for now for demo, but normally would use d3-force)
     // We'll arrange them in circles for the demo visual
     const nodes = React.useMemo(() => {
+        if (!data || !data.nodes) return [];
         const center = { x: 400, y: 300 };
-        return data.nodes.map((node, i) => {
-            const angle = (i / data.nodes.length) * 2 * Math.PI;
-            const radius = node.type === "collection" ? 0 : (node.type === "directory" ? 100 : 250);
+
+        // Filter valid nodes first
+        const validNodes = data.nodes.filter(n => n && typeof n === 'object');
+
+        return validNodes.map((node, i) => {
+            const angle = (i / validNodes.length) * 2 * Math.PI;
+            // Safe type access
+            const type = node.type || 'file';
+            const radius = type === "collection" ? 0 : (type === "directory" ? 100 : 250);
             return {
                 ...node,
+                type,
                 x: center.x + Math.cos(angle) * (radius + Math.random() * 50),
                 y: center.y + Math.sin(angle) * (radius + Math.random() * 50)
             };
@@ -58,6 +66,11 @@ export function KnowledgeGraph({ data, title = "Codebase Knowledge Graph" }: Kno
 
     return (
         <div className="w-full h-[600px] bg-[#0F172A] rounded-xl overflow-hidden border border-slate-700 shadow-2xl relative flex flex-col">
+            {(!data || !data.nodes || data.nodes.length === 0) && (
+                <div className="absolute inset-0 flex items-center justify-center text-slate-500 z-50 pointer-events-none">
+                    <p>No graph data available to visualize.</p>
+                </div>
+            )}
             {/* Header */}
             <div className="h-14 border-b border-slate-700 flex items-center justify-between px-6 bg-slate-900/50 backdrop-blur-sm z-10">
                 <div className="flex items-center gap-2 text-slate-100">
@@ -90,7 +103,7 @@ export function KnowledgeGraph({ data, title = "Codebase Knowledge Graph" }: Kno
                 >
                     <svg className="w-full h-full pointer-events-none">
                         {/* Edges */}
-                        {data.edges.map((edge, i) => {
+                        {data && data.edges && data.edges.map((edge, i) => {
                             const source = nodes.find(n => n.id === edge.source);
                             const target = nodes.find(n => n.id === edge.target);
                             if (!source || !target) return null;

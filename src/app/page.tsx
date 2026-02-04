@@ -137,7 +137,7 @@ export default function LandingPage() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/40 backdrop-blur-md border border-white/60 text-[11px] font-black uppercase tracking-widest text-pink-600 mb-8 shadow-sm"
             >
               <Zap className="w-3 h-3 fill-pink-600" />
-              AI-Powered GitHub Intelligence
+              AI-Powered Flux Intelligence
             </motion.div>
 
             <h1 className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tight mb-8 leading-[1.05] text-gray-900 drop-shadow-sm">
@@ -360,7 +360,7 @@ export default function LandingPage() {
             <div className="w-10 h-10 rounded-xl bg-gray-900 flex items-center justify-center shadow-lg">
               <Github className="w-6 h-6 text-white" />
             </div>
-            <span className="font-bold text-xl tracking-tight text-gray-900">GitHub Explorer</span>
+            <span className="font-bold text-xl tracking-tight text-gray-900">Flux</span>
           </div>
 
           <div className="flex gap-12 text-sm font-bold text-gray-600">
@@ -379,7 +379,7 @@ export default function LandingPage() {
           </div>
         </div>
         <p className="mt-12 text-xs text-gray-500 tracking-widest uppercase font-bold">
-          © 2026 Powered by Tambo AI
+          © 2026 Powered by Flux AI
         </p>
       </footer>
 

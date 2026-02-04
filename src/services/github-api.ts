@@ -348,6 +348,16 @@ class GitHubAPI {
     console.log(`[GitHub API] Fetching jobs for run ${run_id} in ${owner}/${repo}`);
     return await this.request<any>(`/repos/${owner}/${repo}/actions/runs/${run_id}/jobs`);
   }
+  async getNotifications(all = false, participating = false, per_page = 20): Promise<any[]> {
+    console.log(`[GitHub API] Fetching notifications (all=${all}, participating=${participating})`);
+    const params = new URLSearchParams({
+      all: String(all),
+      participating: String(participating),
+      per_page: String(per_page)
+    });
+    // /notifications endpoint lists all notifications for the current user
+    return await this.request<any[]>(`/notifications?${params}`);
+  }
 }
 
 

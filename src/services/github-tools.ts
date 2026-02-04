@@ -14,6 +14,14 @@ export const getOrganizationRepositories = async (input: { org: string; per_page
   }
 };
 
+export const getRepository = async (input: { owner: string; repo: string }) => {
+  try {
+    return await githubAPI.getRepository(input.owner, input.repo);
+  } catch (error) {
+    throw new Error(`Failed to fetch repository details: ${error instanceof Error ? error.message : 'Unknown error'}`);
+  }
+};
+
 // Issues Tools
 export const getRepositoryIssues = async (input: z.infer<typeof issuesInputSchema>) => {
   console.log('[GitHub Tools] getRepositoryIssues called with:', input);
@@ -121,5 +129,13 @@ export const debugWorkflowRun = async (input: { owner: string; repo: string; run
     return jobs;
   } catch (error) {
     throw new Error(`Failed to debug workflow run: ${error instanceof Error ? error.message : 'Unknown error'}`);
+  }
+};
+
+export const getNotifications = async (input: { all?: boolean; participating?: boolean }) => {
+  try {
+    return await githubAPI.getNotifications(input.all, input.participating);
+  } catch (error) {
+    throw new Error(`Failed to fetch notifications: ${error instanceof Error ? error.message : 'Unknown error'}`);
   }
 };

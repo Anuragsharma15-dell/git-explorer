@@ -56,40 +56,40 @@ export const MessageThreadFull = React.forwardRef<
 
   const threadHistorySidebar = <></>;
 
-const defaultSuggestions: Suggestion[] = [
-  {
-    id: "suggestion-1",
-    title: "List 5 repos from tambo-ai",
-    detailedSuggestion: "Fetch the top 5 repositories from the tambo-ai org",
-    messageId: "list-tambo-repos",
-  },
-  {
-    id: "suggestion-2",
-    title: "Unassigned issues",
-    detailedSuggestion: "List 6 open issues without an assignee across tambo-ai repos",
-    messageId: "list-unassigned-issues",
-  },
-  {
-    id: "suggestion-3",
-    title: "Recent PRs",
-    detailedSuggestion: "Show me the 5 most recent pull requests in tambo-ai/tambo",
-    messageId: "recent-prs",
-  },
+  const defaultSuggestions: Suggestion[] = [
+    {
+      id: "suggestion-1",
+      title: "List 5 repos from tambo-ai",
+      detailedSuggestion: "Fetch the top 5 repositories from the tambo-ai org",
+      messageId: "list-tambo-repos",
+    },
+    {
+      id: "suggestion-2",
+      title: "Unassigned issues",
+      detailedSuggestion: "List 6 open issues without an assignee across tambo-ai repos",
+      messageId: "list-unassigned-issues",
+    },
+    {
+      id: "suggestion-3",
+      title: "Recent PRs",
+      detailedSuggestion: "Show me the 5 most recent pull requests in tambo-ai/tambo",
+      messageId: "recent-prs",
+    },
 
-  {
-    id: "suggestion-5",
-    title: "Star counts",
-    detailedSuggestion: "Show star and fork counts for 5 repositories in tambo-ai",
-    messageId: "repo-stats",
-  },
-  {
-    id: "suggestion-6",
-    title: "Open vs closed issues",
-    detailedSuggestion: "Compare open and closed issue counts in tambo-ai/tambo",
-    messageId: "issue-stats",
-  },
+    {
+      id: "suggestion-5",
+      title: "Star counts",
+      detailedSuggestion: "Show star and fork counts for 5 repositories in tambo-ai",
+      messageId: "repo-stats",
+    },
+    {
+      id: "suggestion-6",
+      title: "Open vs closed issues",
+      detailedSuggestion: "Compare open and closed issue counts in tambo-ai/tambo",
+      messageId: "issue-stats",
+    },
 
-];
+  ];
 
 
   return (
@@ -99,7 +99,7 @@ const defaultSuggestions: Suggestion[] = [
 
       <ThreadContainer ref={mergedRef} className={className} {...props}>
         <div className="flex-1 flex flex-col min-h-0 max-h-full overflow-hidden">
-          <ScrollableMessageContainer className="flex-1 p-4 min-h-0">
+          <ScrollableMessageContainer className="flex-1 p-4 min-h-0 custom-scrollbar">
             <ThreadContent variant={variant}>
               <ThreadContentMessages />
             </ThreadContent>

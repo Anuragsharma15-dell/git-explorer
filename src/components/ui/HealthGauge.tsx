@@ -9,16 +9,16 @@ interface HealthGaugeProps {
   size?: 'sm' | 'md' | 'lg';
 }
 
-export function HealthGauge({ 
-  title, 
-  value, 
-  max = 100, 
-  unit = '', 
+export function HealthGauge({
+  title,
+  value,
+  max = 100,
+  unit = '',
   color = 'blue',
   size = 'md'
 }: HealthGaugeProps) {
   const percentage = Math.min((value / max) * 100, 100);
-  
+
   const colorClasses = {
     green: 'text-green-600 bg-green-100 border-green-200',
     yellow: 'text-yellow-600 bg-yellow-100 border-yellow-200',
@@ -48,6 +48,7 @@ export function HealthGauge({
   };
 
   const formatValue = (val: number) => {
+    if (val === undefined || val === null) return "0";
     if (val >= 1000000) {
       return `${(val / 1000000).toFixed(1)}M`;
     }
@@ -66,7 +67,7 @@ export function HealthGauge({
         <h3 className={`font-medium ${textSizes[size].title} mb-2`}>
           {title}
         </h3>
-        
+
         <div className="flex items-baseline justify-center gap-1 mb-3">
           <span className={`font-bold ${textSizes[size].value}`}>
             {formatValue(value)}
@@ -80,13 +81,13 @@ export function HealthGauge({
 
         {max > 0 && (
           <div className="w-full bg-gray-200 rounded-full h-2">
-            <div 
+            <div
               className={`h-2 rounded-full transition-all duration-300 ${progressColors[color]}`}
               style={{ width: `${percentage}%` }}
             />
           </div>
         )}
-        
+
         {max > 0 && (
           <div className="flex justify-between text-xs opacity-60 mt-1">
             <span>0</span>
@@ -106,7 +107,7 @@ interface HealthDashboardProps {
     total_prs: number;
     open_prs: number;
     merged_prs: number;
-  
+
     active_contributors: number;
     activity_score: number;
   };
@@ -119,12 +120,12 @@ export function HealthDashboard({ metrics }: HealthDashboardProps) {
     return 'red';
   };
 
-  const issueResolutionRate = metrics.total_issues > 0 
-    ? (metrics.closed_issues / metrics.total_issues) * 100 
+  const issueResolutionRate = metrics.total_issues > 0
+    ? (metrics.closed_issues / metrics.total_issues) * 100
     : 0;
 
-  const prMergeRate = metrics.total_prs > 0 
-    ? (metrics.merged_prs / metrics.total_prs) * 100 
+  const prMergeRate = metrics.total_prs > 0
+    ? (metrics.merged_prs / metrics.total_prs) * 100
     : 0;
 
   return (
@@ -136,19 +137,19 @@ export function HealthDashboard({ metrics }: HealthDashboardProps) {
         unit="%"
         color={getHealthColor(metrics.activity_score)}
       />
-      
+
       <HealthGauge
         title="Open Issues"
         value={metrics.open_issues}
         color={metrics.open_issues > 50 ? 'red' : metrics.open_issues > 20 ? 'yellow' : 'green'}
       />
-      
+
       <HealthGauge
         title="Open PRs"
         value={metrics.open_prs}
         color={metrics.open_prs > 20 ? 'red' : metrics.open_prs > 10 ? 'yellow' : 'green'}
       />
-      
+
       <HealthGauge
         title="Issue Resolution"
         value={issueResolutionRate}
@@ -156,7 +157,7 @@ export function HealthDashboard({ metrics }: HealthDashboardProps) {
         unit="%"
         color={getHealthColor(issueResolutionRate)}
       />
-      
+
       <HealthGauge
         title="PR Merge Rate"
         value={prMergeRate}
@@ -164,7 +165,7 @@ export function HealthDashboard({ metrics }: HealthDashboardProps) {
         unit="%"
         color={getHealthColor(prMergeRate)}
       />
-      
+
       <HealthGauge
         title="Contributors"
         value={metrics.active_contributors}
