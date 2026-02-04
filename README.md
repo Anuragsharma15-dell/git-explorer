@@ -12,7 +12,7 @@
 
 ---
 
-## 🤖 What is GitHub Explorer?
+## 🤖 What is Flux ?
 
 **Flux** represents the next evolution of developer tools: **Generative UI**. 
 
