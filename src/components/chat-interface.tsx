@@ -31,7 +31,7 @@ export function ChatInterface() {
         >
             <TamboMcpProvider mcpServers={mcpServers}>
                 <ChatInputProvider>
-                    <div className="h-[800px] max-w-5xl mx-auto glass rounded-3xl overflow-hidden premium-shadow border border-border/50 flex flex-col my-12" id="chat">
+                    <div className="h-full w-full flex flex-col" id="chat">
                         <MessageThreadFull
                             className="h-full w-full"
                             contextKey="github-explorer-v2"

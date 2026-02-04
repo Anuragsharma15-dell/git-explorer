@@ -16,7 +16,6 @@ import {
   Zap,
   CheckCircle2
 } from "lucide-react";
-import { ChatInterface } from "@/components/chat-interface";
 import Image from "next/image";
 import { TamboLogo } from "@/components/tambo/logo";
 import { LoginBtn } from "@/components/login-btn";
@@ -63,7 +62,7 @@ const Navbar = () => (
       <a href="#mcp" className="hover:text-foreground transition-colors">MCP Config</a>
       <a href="#demo" className="hover:text-foreground transition-colors">Demo</a>
       <LoginBtn />
-      <a href="#chat" className="px-5 py-2 rounded-full bg-primary text-primary-foreground hover:premium-shadow transition-all">Start Chatting</a>
+      <a href="/chat" className="px-5 py-2 rounded-full bg-primary text-primary-foreground hover:premium-shadow transition-all">Start Chatting</a>
     </div>
   </nav>
 );
@@ -154,7 +153,7 @@ export default function LandingPage() {
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="#chat"
+                href="/chat"
                 className="px-8 py-4 rounded-2xl bg-gray-900 text-white font-bold text-lg shadow-xl shadow-gray-900/20 flex items-center gap-2 group hover:bg-gray-800 transition-all"
               >
                 Start Chatting
@@ -329,25 +328,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* Main App Section (Chat) */}
-        <section id="chat" className="py-24 px-6 sm:px-12 w-full max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-900 text-white text-[10px] font-black uppercase mb-4 shadow-lg">
-              Terminal Ready
-            </div>
-            <h2 className="text-4xl font-black mb-6 text-gray-900">Ready to Explore?</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto font-medium">Try the assistant below. Ask for repositories from any organization to start.</p>
-          </motion.div>
 
-          <div className="glass rounded-[2rem] overflow-hidden shadow-2xl border border-white/50 bg-white/30 backdrop-blur-xl">
-            <ChatInterface />
-          </div>
-        </section>
 
         {/* Big prominent CTA */}
         <section className="py-24 px-6 sm:px-12 flex flex-col items-center text-center w-full">
@@ -362,7 +343,7 @@ export default function LandingPage() {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="#chat"
+              href="/chat"
               className="inline-flex items-center gap-2 px-12 py-6 rounded-2xl bg-gray-900 text-white font-black text-xl shadow-xl hover:shadow-2xl transition-all"
             >
               Go to Chat
@@ -405,7 +386,7 @@ export default function LandingPage() {
       {/* Sticky CTA Mobile */}
       <div className="fixed bottom-6 right-6 z-50 md:hidden">
         <a
-          href="#chat"
+          href="/chat"
           className="w-16 h-16 rounded-full bg-gray-900 text-white shadow-2xl flex items-center justify-center animate-bounce"
         >
           <MessageSquare className="w-8 h-8" />
