@@ -161,3 +161,4 @@ This project was built for **The UI Strikes Back** hackathon (Feb 2-8, 2026). It
   <p>Star this repo if you find it useful!</p>
   <p>© 2026 Powered by Flux AI</p>
 </div>
+
