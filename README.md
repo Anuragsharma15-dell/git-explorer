@@ -1,9 +1,9 @@
-# GitHub Explorer x Tambo 🚀
+# Flux 🚀
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/f11e5a44-9fc0-4fa5-9dd8-f1d8d13d4a99" alt="GitHub Explorer Dashboard" width="100%" />
 
-  **Master your repositories conversationally.**
+  **Master your repositories conversationally with Flux.**
   <br/>
   *Built for "The UI Strikes Back" Hackathon.*
   
@@ -14,7 +14,7 @@
 
 ## 🤖 What is GitHub Explorer?
 
-**GitHub Explorer** represents the next evolution of developer tools: **Generative UI**. 
+**Flux** represents the next evolution of developer tools: **Generative UI**. 
 
 Instead of navigating through static tabs for Issues, Pull Requests, and Insights, you simply **ask** for what you need. The application doesn't just reply with text; it **generates custom interactive interfaces** on the fly tailored to your specific intent.
 
@@ -83,8 +83,8 @@ graph TD
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/nermalcat69/tambo-github-explorer
-   cd tambo-github-explorer
+   git clone https://github.com/nermalcat69/flux
+   cd flux
    ```
 
 2. **Install dependencies**
@@ -105,21 +105,30 @@ graph TD
    GITHUB_TOKEN=your_github_pat_here
    ```
 
-#### API Keys Setup
+### API Keys Setup
 
-**Tambo API Key**
+#### Tambo API Key
 
 https://github.com/user-attachments/assets/ce0580cb-2049-4653-ac93-0ce406049818
 
+
 1. Sign up on [Tambo](https://tambo.co)
 2. Create a Project and then Generate an API Key
+3. For support, join their [Discord community](https://discord.gg/hpT8n7XdyN)
 
-**GitHub Token Setup**
+
+
+### GitHub Token Setup
+
+
 
 https://github.com/user-attachments/assets/db9ffe57-2e7e-4bd8-b63f-bf9ce9c9fdfa
 
+
+
 1. Go to GitHub Settings > Developer settings > Personal access tokens(Fine-grained tokens)
 2. Generate a new token.
+
 
 4. **Run Locally**
    ```bash
@@ -143,5 +152,5 @@ This project was built for **The UI Strikes Back** hackathon (Feb 2-8, 2026). It
 
 <div align="center">
   <p>Star this repo if you find it useful!</p>
-  <p>© 2026 Powered by Tambo AI</p>
+  <p>© 2026 Powered by Flux AI</p>
 </div>
