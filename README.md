@@ -12,7 +12,7 @@
 
 ---
 
-## 🤖 What is GitHub Explorer?
+## 🤖 What is Flux?
 
 **Flux** represents the next evolution of developer tools: **Generative UI**. 
 
@@ -31,7 +31,10 @@ https://github.com/user-attachments/assets/4af35274-7c53-42c7-b725-11622598ef28
 - **📋 Smart Issue Triage**: Instantly generate Kanban boards to categorize and manage issues.
 - **🔍 Intelligent Diff Viewer**: Review Pull Requests with a side-by-side comparison tool generated on demand.
 - **📊 Real-time Insights**: Visualize repository health, contributor stats, and activity trends.
-- **🔐 Secure Integration**: Powered by Model Context Protocol (MCP) and fine-grained GitHub PATs.
+- **� Smart CI/CD Debugger**: Visualize pipeline failures with logs and AI-powered diagnosis.
+- **🔔 Notification Triage**: A dedicated inbox to filter and act on notifications efficiently.
+- **🧠 Codebase Knowledge Graph**: Explore your project's architecture with an interactive force-directed graph.
+- **�🔐 Secure Integration**: Powered by Model Context Protocol (MCP) and fine-grained GitHub PATs.
 
 ## 🏗️ How It Works
 
@@ -144,6 +147,9 @@ https://github.com/user-attachments/assets/db9ffe57-2e7e-4bd8-b63f-bf9ce9c9fdfa
 | **Triage** | "Organize the open bugs in facebook/react" | Interactive Kanban Board |
 | **Review** | "Show me the changes in PR #123" | Split-View Code Diff |
 | **Analysis** | "What's the commit activity like this week?" | Activity Line Chart |
+| **Debug** | "Why did the build fail on run #842?" | CI/CD Pipeline Debugger |
+| **Notifications** | "Show my unread notifications" | Notification Inbox |
+| **Architecture** | "Visualize the codebase structure" | Interactive Knowledge Graph |
 
 ## 🏆 Hackathon Context
 This project was built for **The UI Strikes Back** hackathon (Feb 2-8, 2026). It demonstrates the power of escaping static workflows in favor of intent-driven dynamic interfaces.
