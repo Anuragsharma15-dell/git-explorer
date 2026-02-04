@@ -1,4 +1,4 @@
-# Flux 🚀
+# Flux  <img src="flux-logo.png" alt="Flux Logo" width="100" height="100" />
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/f11e5a44-9fc0-4fa5-9dd8-f1d8d13d4a99" alt="GitHub Explorer Dashboard" width="100%" />
