@@ -12,7 +12,11 @@
 
 ---
 
+<<<<<<< HEAD
 ## 🤖 What is Flux?
+=======
+## 🤖 What is Flux ?
+>>>>>>> de0ba2a38035b38c56e7c54be26ef0eb6639a501
 
 **Flux** represents the next evolution of developer tools: **Generative UI**. 
 
