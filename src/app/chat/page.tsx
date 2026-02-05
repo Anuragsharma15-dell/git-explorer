@@ -7,23 +7,20 @@ import { TamboLogo } from "@/components/tambo/logo";
 
 export default function ChatPage() {
     return (
-        <div className="min-h-screen w-full relative text-gray-900 font-sans selection:bg-[#FFB3D9]/50 overflow-hidden bg-[#F3F8F5]">
-            {/* Background from Landing Page */}
+        <div className="min-h-screen w-full relative text-gray-900 font-sans selection:bg-[#FFB3D9]/50 overflow-hidden bg-white">
+            {/*  Diagonal Cross Center Fade Grid Background */}
             <div
                 className="absolute inset-0 z-0"
                 style={{
                     backgroundImage: `
-            linear-gradient(to right, #e7e5e4 1px, transparent 1px),
-            linear-gradient(to bottom, #e7e5e4 1px, transparent 1px)
+            linear-gradient(45deg, transparent 49%, #9ca3af 49%, #9ca3af 51%, transparent 51%),
+            linear-gradient(-45deg, transparent 49%, #9ca3af 49%, #9ca3af 51%, transparent 51%)
           `,
-                    backgroundSize: "20px 20px",
-                    backgroundPosition: "0 0, 0 0",
-                    maskImage: `
-               radial-gradient(ellipse 60% 60% at 50% 50%, #000 30%, transparent 70%)
-          `,
-                    WebkitMaskImage: `
-               radial-gradient(ellipse 60% 60% at 50% 50%, #000 30%, transparent 70%)
-          `,
+                    backgroundSize: "40px 40px",
+                    WebkitMaskImage:
+                        "radial-gradient(ellipse 60% 60% at 50% 50%, #000 30%, transparent 70%)",
+                    maskImage:
+                        "radial-gradient(ellipse 60% 60% at 50% 50%, #000 30%, transparent 70%)",
                 }}
             />
 

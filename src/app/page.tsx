@@ -70,52 +70,17 @@ const Navbar = () => (
 export default function LandingPage() {
   return (
     <div className="min-h-screen w-full relative text-gray-900 font-sans selection:bg-[#FFB3D9]/50 overflow-x-hidden">
-      {/* Dashed Center Fade Grid */}
+      {/* Magenta Orb Grid Background */}
       <div
         className="absolute inset-0 z-0"
         style={{
+          background: "white",
           backgroundImage: `
-            linear-gradient(to right, #e7e5e4 1px, transparent 1px),
-            linear-gradient(to bottom, #e7e5e4 1px, transparent 1px)
+            linear-gradient(to right, rgba(71,85,105,0.15) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(71,85,105,0.15) 1px, transparent 1px),
+            radial-gradient(circle at 50% 60%, rgba(236,72,153,0.15) 0%, rgba(168,85,247,0.05) 40%, transparent 70%)
           `,
-          backgroundSize: "20px 20px",
-          backgroundPosition: "0 0, 0 0",
-          maskImage: `
-           repeating-linear-gradient(
-                  to right,
-                  black 0px,
-                  black 3px,
-                  transparent 3px,
-                  transparent 8px
-                ),
-                repeating-linear-gradient(
-                  to bottom,
-                  black 0px,
-                  black 3px,
-                  transparent 3px,
-                  transparent 8px
-                ),
-              radial-gradient(ellipse 60% 60% at 50% 50%, #000 30%, transparent 70%)
-          `,
-          WebkitMaskImage: `
-     repeating-linear-gradient(
-                  to right,
-                  black 0px,
-                  black 3px,
-                  transparent 3px,
-                  transparent 8px
-                ),
-                repeating-linear-gradient(
-                  to bottom,
-                  black 0px,
-                  black 3px,
-                  transparent 3px,
-                  transparent 8px
-                ),
-              radial-gradient(ellipse 60% 60% at 50% 50%, #000 30%, transparent 70%)
-          `,
-          maskComposite: "intersect",
-          WebkitMaskComposite: "source-in",
+          backgroundSize: "40px 40px, 40px 40px, 100% 100%",
         }}
       />
 
@@ -178,7 +143,7 @@ export default function LandingPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1 }}
-            className="w-full max-w-6xl relative group perspective-1000"
+            className="w-full max-w-4xl relative group perspective-1000"
           >
             <div className="absolute inset-0 bg-gradient-to-tr from-pink-500/20 to-blue-500/20 blur-[100px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
             <motion.div
@@ -186,13 +151,15 @@ export default function LandingPage() {
               style={{ transformStyle: "preserve-3d" }}
               className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-[8px] border-white/60 bg-white/20 backdrop-blur-sm"
             >
-              <Image
-                src="/app-screenshot.png"
-                alt="App Screenshot"
-                width={1920}
-                height={1080}
+              <video
+                src="/demo-video.mp4"
+                width={1900}
+                height={1020}
                 className="w-full h-auto object-cover"
-                priority
+                autoPlay
+                loop
+                muted
+                playsInline
               />
             </motion.div>
 
