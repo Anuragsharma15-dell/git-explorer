@@ -10,13 +10,10 @@
   [**Demo**](#demo) · [**Features**](#features) · [**Architecture**](#how-it-works) · [**Setup**](#setup)
 </div>
 
----
 
-<<<<<<< HEAD
-## 🤖 What is Flux?
-=======
+
 ## 🤖 What is Flux ?
->>>>>>> de0ba2a38035b38c56e7c54be26ef0eb6639a501
+
 
 **Flux** represents the next evolution of developer tools: **Generative UI**. 
 
@@ -164,3 +161,4 @@ This project was built for **The UI Strikes Back** hackathon (Feb 2-8, 2026). It
   <p>Star this repo if you find it useful!</p>
   <p>© 2026 Powered by Flux AI</p>
 </div>
+
