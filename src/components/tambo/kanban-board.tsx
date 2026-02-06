@@ -9,7 +9,8 @@ import {
     PointerSensor,
     useSensor,
     useSensors,
-    DragOverlay
+    DragOverlay,
+    DragEndEvent
 } from "@dnd-kit/core";
 import {
     arrayMove,
@@ -135,7 +136,7 @@ export function KanbanBoard({ issues: initialIssues, title = "Project Board" }: 
     const grouped = getColumns();
 
     // Drag end handler (visual only for this lightweight version)
-    const handleDragEnd = (event: any) => {
+    const handleDragEnd = (event: DragEndEvent) => {
         const { active, over } = event;
         if (active.id !== over?.id) {
             // Logic to move items would go here

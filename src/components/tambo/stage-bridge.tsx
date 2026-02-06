@@ -9,7 +9,7 @@ function makeBridge(
     type: "analysis" | "kanban" | "comparison" | "release" | "diff",
     title: string
 ) {
-    return function BridgeComponent(props: any) {
+    return function BridgeComponent(props: Record<string, unknown>) {
         const { setStageView } = useWorkspace();
         const hasMounted = React.useRef(false);
 

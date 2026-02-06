@@ -7,11 +7,11 @@ import { CheckCircle2, AlertTriangle, Users, BookOpen, Activity, GitPullRequest,
 import { Graph } from "@/components/tambo/graph";
 
 interface RepositoryAnalysisProps {
-    contributors?: any[];
+    contributors?: unknown[];
     languages?: Record<string, number>;
-    activity_summary?: any[];
-    recent_issues?: any[];
-    recent_prs?: any[];
+    activity_summary?: unknown[];
+    recent_issues?: unknown[];
+    recent_prs?: unknown[];
     analysis?: {
         health_score: number;
         highlights: string[];
@@ -35,10 +35,10 @@ export function RepositoryAnalysis({
     // Calculate a simplified "color" for the health score
     const scoreColor = analysis.health_score >= 80 ? "green" : analysis.health_score >= 50 ? "yellow" : "red";
 
-    const activityLabels = (activity_summary || []).map((w: any) =>
+    const activityLabels = (activity_summary || []).map((w) =>
         w ? new Date((w.week || 0) * 1000).toLocaleDateString("en-US", { month: "short", day: "numeric" }) : ""
     );
-    const activityData = (activity_summary || []).map((w: any) => w?.total || 0);
+    const activityData = (activity_summary || []).map((w) => (w as { total: number })?.total || 0);
 
     const langLabels = Object.keys(languages || {});
     // Take top 5 languages for cleaner pie chart

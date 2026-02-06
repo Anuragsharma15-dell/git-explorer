@@ -4,11 +4,11 @@ import * as React from "react";
 
 export type StageView =
     | { type: "empty" }
-    | { type: "analysis"; props: any }
-    | { type: "kanban"; props: any }
-    | { type: "comparison"; props: any }
-    | { type: "release"; props: any }
-    | { type: "diff"; props: any }
+    | { type: "analysis"; props: Record<string, unknown> }
+    | { type: "kanban"; props: Record<string, unknown> }
+    | { type: "comparison"; props: Record<string, unknown> }
+    | { type: "release"; props: Record<string, unknown> }
+    | { type: "diff"; props: Record<string, unknown> }
     | { type: "custom"; component: React.ReactNode };
 
 interface WorkspaceContextValue {

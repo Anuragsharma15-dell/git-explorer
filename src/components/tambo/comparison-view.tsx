@@ -2,17 +2,17 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Star, GitFork, Eye, Calendar, ArrowRight, ArrowLeftRight, Check, X, Award } from "lucide-react";
+import { Star, GitFork, Eye, AlertCircle, Award } from "lucide-react";
 import { GitHubRepo } from "@/lib/types";
 
 interface RepoComparisonProps {
     repo1: GitHubRepo;
     repo2: GitHubRepo;
-    analysis1?: any;
-    analysis2?: any;
+    analysis1?: Record<string, unknown>;
+    analysis2?: Record<string, unknown>;
 }
 
-const StatRow = ({ label, val1, val2, icon: Icon, highlight = "high" }: any) => {
+const StatRow = ({ label, val1, val2, icon: Icon, highlight = "high" }: { label: string, val1: number, val2: number, icon: React.ElementType, highlight?: "high" | "low" }) => {
     const is1Better = highlight === "high" ? val1 > val2 : val1 < val2;
     const is2Better = highlight === "high" ? val2 > val1 : val2 < val1;
     const isEqual = val1 === val2;

@@ -267,21 +267,22 @@ class GitHubAPI {
     return data.map(item => githubRepoSchema.parse(item));
   }
 
-  async getRepositoryContributors(owner: string, repo: string): Promise<any[]> {
-    return await this.request<any[]>(`/repos/${owner}/${repo}/contributors?per_page=10`);
+  async getRepositoryContributors(owner: string, repo: string): Promise<unknown[]> {
+    return await this.request<unknown[]>(`/repos/${owner}/${repo}/contributors?per_page=10`);
   }
 
   async getRepositoryLanguages(owner: string, repo: string): Promise<Record<string, number>> {
     return await this.request<Record<string, number>>(`/repos/${owner}/${repo}/languages`);
   }
 
-  async getRepositoryActivity(owner: string, repo: string): Promise<any[]> {
+  async getRepositoryActivity(owner: string, repo: string): Promise<unknown[]> {
     // Fetches the last 52 weeks of commit activity
-    return await this.request<any[]>(`/repos/${owner}/${repo}/stats/commit_activity`);
+    return await this.request<unknown[]>(`/repos/${owner}/${repo}/stats/commit_activity`);
   }
-  async getRepository(owner: string, repo: string) {
+  async getRepository(owner: string, repo: string): Promise<GitHubRepo> {
     console.log(`Fetching repo ${owner}/${repo}`);
-    return this.request(`/repos/${owner}/${repo}`);
+    const data = await this.request<unknown>(`/repos/${owner}/${repo}`);
+    return githubRepoSchema.parse(data);
   }
 
   // --- New Advanced Features ---
@@ -305,21 +306,21 @@ class GitHubAPI {
     }
   }
 
-  async getDirectoryContent(owner: string, repo: string, path: string = ""): Promise<any[]> {
+  async getDirectoryContent(owner: string, repo: string, path: string = ""): Promise<unknown[]> {
     console.log(`[GitHub API] Fetching directory content for ${owner}/${repo}/${path}`);
-    return await this.request<any[]>(`/repos/${owner}/${repo}/contents/${path}`);
+    return await this.request<unknown[]>(`/repos/${owner}/${repo}/contents/${path}`);
   }
 
-  async getPullRequestFiles(owner: string, repo: string, pullNumber: number): Promise<any[]> {
+  async getPullRequestFiles(owner: string, repo: string, pullNumber: number): Promise<unknown[]> {
     console.log(`[GitHub API] Fetching PR files for ${owner}/${repo}/pull/${pullNumber}`);
-    return await this.request<any[]>(`/repos/${owner}/${repo}/pulls/${pullNumber}/files`);
+    return await this.request<unknown[]>(`/repos/${owner}/${repo}/pulls/${pullNumber}/files`);
   }
 
   // --- FEATURE SET 1: Project Manager (Write Mode) ---
 
-  async createIssue(owner: string, repo: string, title: string, body?: string, labels?: string[], assignees?: string[]): Promise<any> {
+  async createIssue(owner: string, repo: string, title: string, body?: string, labels?: string[], assignees?: string[]): Promise<unknown> {
     console.log(`[GitHub API] Creating issue in ${owner}/${repo}: ${title}`);
-    return await this.request<any>(`/repos/${owner}/${repo}/issues`, {
+    return await this.request<unknown>(`/repos/${owner}/${repo}/issues`, {
       method: "POST",
       body: JSON.stringify({ title, body, labels, assignees }),
     });
@@ -327,28 +328,28 @@ class GitHubAPI {
 
   // --- FEATURE SET 2: Code Search ---
 
-  async searchCode(q: string, per_page = 10): Promise<any> {
+  async searchCode(q: string, per_page = 10): Promise<unknown> {
     console.log(`[GitHub API] Searching code: ${q}`);
     const params = new URLSearchParams({
       q,
       per_page: String(per_page)
     });
-    return await this.request<any>(`/search/code?${params}`);
+    return await this.request<unknown>(`/search/code?${params}`);
   }
 
   // --- FEATURE SET 3: CI/CD Debugger ---
 
-  async getWorkflowRuns(owner: string, repo: string, per_page = 5): Promise<any> {
+  async getWorkflowRuns(owner: string, repo: string, per_page = 5): Promise<unknown> {
     console.log(`[GitHub API] Fetching workflow runs for ${owner}/${repo}`);
-    return await this.request<any>(`/repos/${owner}/${repo}/actions/runs?per_page=${per_page}`);
+    return await this.request<unknown>(`/repos/${owner}/${repo}/actions/runs?per_page=${per_page}`);
   }
 
-  async getWorkflowRunJobs(owner: string, repo: string, run_id: number): Promise<any> {
+  async getWorkflowRunJobs(owner: string, repo: string, run_id: number): Promise<unknown> {
     // This helps identify WHICH job failed in a run
     console.log(`[GitHub API] Fetching jobs for run ${run_id} in ${owner}/${repo}`);
-    return await this.request<any>(`/repos/${owner}/${repo}/actions/runs/${run_id}/jobs`);
+    return await this.request<unknown>(`/repos/${owner}/${repo}/actions/runs/${run_id}/jobs`);
   }
-  async getNotifications(all = false, participating = false, per_page = 20): Promise<any[]> {
+  async getNotifications(all = false, participating = false, per_page = 20): Promise<unknown[]> {
     console.log(`[GitHub API] Fetching notifications (all=${all}, participating=${participating})`);
     const params = new URLSearchParams({
       all: String(all),
@@ -356,7 +357,7 @@ class GitHubAPI {
       per_page: String(per_page)
     });
     // /notifications endpoint lists all notifications for the current user
-    return await this.request<any[]>(`/notifications?${params}`);
+    return await this.request<unknown[]>(`/notifications?${params}`);
   }
 }
 

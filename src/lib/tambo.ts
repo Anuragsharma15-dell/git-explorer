@@ -102,12 +102,12 @@ export const tools: TamboTool[] = [
       // Calculate dynamic health score
       let score = 100;
       const recentActivity = Array.isArray(activity) ? activity.slice(-4) : [];
-      const totalRecentCommits = recentActivity.reduce((acc: number, w: any) => acc + (w.total || 0), 0);
+      const totalRecentCommits = (recentActivity as { total: number }[]).reduce((acc: number, w) => acc + (w.total || 0), 0);
 
       if (totalRecentCommits === 0) score -= 20;
       else if (totalRecentCommits < 5) score -= 10;
 
-      const repo = repoDetails as any;
+      const repo = repoDetails;
       if (repo.open_issues_count > 50) score -= 15;
       if (repo.open_issues_count > 100) score -= 15;
 
