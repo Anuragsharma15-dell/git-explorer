@@ -203,8 +203,8 @@ export function CIDebugger({ run, onAnalyzeFailure }: CIDebuggerProps) {
                                 <div className="text-green-400 pl-4 mt-2">PASS src/utils/helpers.test.ts</div>
                                 <div className="text-red-400 pl-4 font-bold mt-2">FAIL src/components/App.test.tsx</div>
                                 <div className="text-red-300 pl-6">● App renders correctly</div>
-                                <div className="text-red-300 pl-8 mt-1">Expected: "Learn React"</div>
-                                <div className="text-red-300 pl-8">Received: "Learn Angular"</div>
+                                <div className="text-red-300 pl-8 mt-1">Expected: &quot;Learn React&quot;</div>
+                                <div className="text-red-300 pl-8">Received: &quot;Learn Angular&quot;</div>
                                 <div className="mt-4 border-t border-white/10 pt-2 text-red-500">
                                     Process exited with code 1
                                 </div>

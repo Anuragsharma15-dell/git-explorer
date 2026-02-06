@@ -1,8 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { motion } from "framer-motion";
-import { AnimatePresence } from "framer-motion";
+import { animate, delay, motion } from "framer-motion";
+
 
 import {
   Github,
@@ -13,20 +13,31 @@ import {
   Layers,
   ArrowRight,
   ShieldCheck,
-  Zap,
-  CheckCircle2
+  Zap
 } from "lucide-react";
 import Image from "next/image";
 import { TamboLogo } from "@/components/tambo/logo";
 import { LoginBtn } from "@/components/login-btn";
-
+import { SunIcon, MoonIcon } from "lucide-react";
+import { set } from "date-fns";
+import { Darker_Grotesque } from "next/font/google";
 // Components
-const FeatureCard = ({ icon: Icon, title, description, delay }: any) => (
+const FeatureCard = ({ icon: Icon, title, description, delay }: { icon: React.ElementType, title: string, description: string, delay: number }) => (
   <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
+
+    animate={{
+      x: ["0%", "-50%"],
+      transition: {
+        ease: "linear",
+        duration: 10,
+        repeat: Infinity
+      }
+
+    }}
+
+
     viewport={{ once: true }}
-    transition={{ duration: 0.5, delay }}
+
     whileHover={{ y: -5 }}
     className="p-8 rounded-3xl glass border border-border/30 bg-card premium-shadow group"
   >
@@ -40,7 +51,7 @@ const FeatureCard = ({ icon: Icon, title, description, delay }: any) => (
   </motion.div>
 );
 
-const Step = ({ number, title, description }: any) => (
+const Step = ({ number, title, description }: { number: string, title: string, description: string }) => (
   <div className="flex flex-col items-center text-center p-6">
     <div className="w-14 h-14 rounded-full bg-[#A1FCD1] flex items-center justify-center text-xl font-black mb-6 shadow-inner border border-white/40">
       {number}
@@ -51,6 +62,8 @@ const Step = ({ number, title, description }: any) => (
 );
 
 const Navbar = () => (
+
+
   <nav className="fixed top-0 left-0 right-0 z-50 h-16 glass border-b border-border/10 px-6 sm:px-12 flex items-center justify-between">
     <div className="flex items-center gap-2 transform scale-75 origin-left">
       <TamboLogo />
@@ -62,8 +75,10 @@ const Navbar = () => (
       <a href="#mcp" className="hover:text-foreground transition-colors">MCP Config</a>
       <a href="#demo" className="hover:text-foreground transition-colors">Demo</a>
       <LoginBtn />
-      <a href="/chat" className="px-5 py-2 rounded-full bg-primary text-primary-foreground hover:premium-shadow transition-all">Start Chatting</a>
+      <SunIcon />
+      <a href="/chat" className="px-5 py-2 rounded-full bg-black text-primary-foreground hover:premium-shadow transition-all">Start Chatting</a>
     </div>
+
   </nav>
 );
 
@@ -111,7 +126,7 @@ export default function LandingPage() {
             </h1>
 
             <p className="text-lg sm:text-xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed font-medium">
-              Analyze repositories, manage issues, and track pull requests with AI assistance. It's like having a senior engineer who knows your entire codebase by heart.
+              Analyze repositories, manage issues, and track pull requests with AI assistance and visulaize dynamically. It's like having a senior engineer who knows your entire codebase by heart.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
@@ -119,7 +134,7 @@ export default function LandingPage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="/chat"
-                className="px-8 py-4 rounded-2xl bg-gray-900 text-white font-bold text-lg shadow-xl shadow-gray-900/20 flex items-center gap-2 group hover:bg-gray-800 transition-all"
+                className="px-5 py-2 rounded-full bg-black-300 text-primary-foreground hover:premium-shadow transition-all"
               >
                 Start Chatting
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -184,26 +199,78 @@ export default function LandingPage() {
             <h2 className="text-4xl sm:text-5xl font-black mb-6 text-gray-900">Powerful Features</h2>
             <p className="text-gray-600 text-lg font-medium">Everything you need to navigate even the largest projects.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div
+
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <FeatureCard
+              animate={{
+                x: ["0%", "-50%"],
+
+              }}
+
+              transition={{
+                ease: "linear",
+                duration: 10,
+                repeat: Infinity
+              }}
               icon={Search}
               title="Deep Analysis"
               description="Perform deep analysis of repository stats, contributors, and activity trends instantly."
               delay={0.1}
+
             />
             <FeatureCard
+              initial={{
+                x: 0
+              }}
+              animate={{
+                x: ["0%", "-50%"],
+
+              }}
+
+              transition={{
+                ease: "linear",
+                duration: 10,
+                repeat: Infinity
+              }}
               icon={Activity}
               title="Issue Triage"
               description="Manage issues automatically with AI-suggested labels, assignees, and summaries."
               delay={0.2}
             />
             <FeatureCard
+
+              animate={{
+                x: ["0%", "-50%"],
+
+              }}
+
+              transition={{
+                ease: "linear",
+                duration: 10,
+                repeat: Infinity
+              }}
               icon={Layers}
               title="PR Tracking"
               description="Keep track of complex pull requests and detect risks like merge conflicts early."
               delay={0.3}
             />
             <FeatureCard
+              initial={{
+                x: 0,
+
+              }}
+              animate={{
+                x: ["0%", "-50%"],
+
+              }}
+
+              transition={{
+                ease: "linear",
+                duration: 10,
+                repeat: Infinity
+              }}
+
               icon={MessageSquare}
               title="AI Chat"
               description="Chat with your codebase in natural language. Ask questions, get explanations."
@@ -337,7 +404,7 @@ export default function LandingPage() {
           </div>
 
           <div className="flex gap-4">
-            <a href="https://github.com" target="_blank" className="p-3 rounded-xl bg-white/50 hover:bg-white transition-all shadow-md text-gray-900">
+            <a href="https://github.com/Anuragsharma15-dell/git-explorer" target="_blank" className="p-3 rounded-xl bg-white/50 hover:bg-white transition-all shadow-md text-gray-900">
               <Github className="w-5 h-5" />
             </a>
             <a href="https://twitter.com" target="_blank" className="p-3 rounded-xl bg-white/50 hover:bg-white transition-all shadow-md text-gray-900">

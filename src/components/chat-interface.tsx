@@ -16,9 +16,9 @@ export function ChatInterface() {
     const { data: session } = useSession();
 
     React.useEffect(() => {
-        // @ts-ignore
+        // @ts-expect-error
         if (session?.accessToken) {
-            // @ts-ignore
+            // @ts-expect-error
             githubAPI.setToken(session.accessToken);
         }
     }, [session]);
