@@ -5,7 +5,7 @@ import { PRCard } from "@/components/ui/PRCard";
 import { IssueCard } from "@/components/ui/IssueCard";
 import { ObjectRenderer } from "@/components/ui/ObjectRenderer";
 import { GridLayout } from "@/components/ui/GridLayout";
-import { HealthGauge, HealthDashboard } from "@/components/ui/HealthGauge";
+import { HealthGauge } from "@/components/ui/HealthGauge";
 import { FileViewer } from "@/components/ui/FileViewer";
 import { CodeSearchResults } from "@/components/ui/CodeSearchResults";
 import { WorkflowRuns } from "@/components/ui/WorkflowRuns";
@@ -40,15 +40,14 @@ import { NotificationCenter } from "@/components/tambo/notification-center";
 import { KnowledgeGraph } from "@/components/tambo/knowledge-graph";
 import { getNotifications } from "@/services/github-tools";
 
-import { resolveGitHubIntent } from "@/services/resolve-github-intent";
+
 
 
 /* -------------------------------------------------------------------------- */
 /*                             SCHEMA UTILITIES                                */
 /* -------------------------------------------------------------------------- */
 
-/** Clamp helper */
-const clamp = (n: number, min: number, max: number) => Math.max(min, Math.min(max, n));
+
 
 /** Convert Zod schema to Tambo-compatible schema */
 const createTamboSchema = (zodSchema: z.ZodType) => {
@@ -76,8 +75,7 @@ export const OwnerRepoSchema = z.object({
   full_name: z.string().optional(),
 });
 
-/** State schema */
-const StateSchema = z.enum(["open", "closed", "all"]).default("open");
+
 
 
 

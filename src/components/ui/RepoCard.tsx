@@ -2,7 +2,7 @@
 
 import { GitHubRepo } from "@/lib/types";
 import { useChatInput } from "@/contexts/chat-input-context";
-import { Star, GitFork, Eye, Calendar, ExternalLink, GitPullRequest, AlertCircle, TrendingUp, Activity } from "lucide-react";
+import { Star, GitFork, ExternalLink, GitPullRequest, AlertCircle, TrendingUp, Activity } from "lucide-react";
 
 
 interface RepoCardProps {

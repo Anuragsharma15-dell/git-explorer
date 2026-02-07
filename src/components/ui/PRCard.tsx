@@ -1,8 +1,7 @@
 "use client";
 
 import { GitHubPR } from "@/lib/types";
-import { useChatInput } from "@/contexts/chat-input-context";
-import { GitPullRequest, Calendar, User, CheckCircle, XCircle, Clock } from "lucide-react";
+import { User, CheckCircle, XCircle } from "lucide-react";
 
 
 interface PRCardProps {

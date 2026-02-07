@@ -11,7 +11,7 @@ import {
   githubIssueSchema,
   githubPRSchema,
 } from "../lib/types";
-import { promise, string } from "zod";
+
 
 class GitHubAPIError extends Error {
   constructor(message: string, public status?: number) {
