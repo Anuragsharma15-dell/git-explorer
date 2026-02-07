@@ -9,7 +9,7 @@ interface FileViewerProps {
     language?: string;
 }
 
-export function FileViewer({ path, content, language = "typescript" }: FileViewerProps) {
+export function FileViewer({ path, content }: FileViewerProps) {
     const [copied, setCopied] = React.useState(false);
 
     const handleCopy = () => {

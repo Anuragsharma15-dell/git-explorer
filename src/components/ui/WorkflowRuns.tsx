@@ -3,6 +3,7 @@
 import * as React from "react";
 import { CheckCircle2, XCircle, Clock, AlertCircle, PlayCircle, GitBranch, GitCommit } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
+import Image from "next/image";
 
 interface WorkflowRun {
     id: number;
@@ -83,7 +84,7 @@ export function WorkflowRuns({ workflow_runs }: WorkflowRunsProps) {
                                             <span className="font-mono">{run.head_sha.substring(0, 7)}</span>
                                         </div>
                                         <div className="flex items-center gap-1">
-                                            <img src={run.actor.avatar_url} alt={run.actor.login} className="w-4 h-4 rounded-full" />
+                                            <Image src={run.actor.avatar_url} alt={run.actor.login} width={16} height={16} className="w-4 h-4 rounded-full" />
                                             <span>{run.actor.login}</span>
                                         </div>
                                     </div>

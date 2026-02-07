@@ -2,6 +2,7 @@
 
 import { GitHubPR } from "@/lib/types";
 import { User, CheckCircle, XCircle } from "lucide-react";
+import Image from "next/image";
 
 
 interface PRCardProps {
@@ -72,7 +73,7 @@ export function PRCard({ pr, onSelect }: PRCardProps) {
             <div className="flex items-center gap-2">
               <div className="w-5 h-5 rounded-full bg-muted flex items-center justify-center overflow-hidden border border-border">
                 {prData.user?.avatar_url ? (
-                  <img src={prData.user.avatar_url} alt="" className="w-full h-full object-cover" />
+                  <Image src={prData.user.avatar_url} alt="" width={20} height={20} className="w-full h-full object-cover" />
                 ) : (
                   <User className="w-3 h-3 text-muted-foreground" />
                 )}
