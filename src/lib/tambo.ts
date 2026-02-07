@@ -433,7 +433,7 @@ export const components: TamboComponent[] = [
     description: "Display a repository.",
     component: RepoCard,
     propsSchema: z.object({
-      repo: z.any().optional(),
+      repo: githubRepoSchema.optional(),
       isSelected: z.boolean().optional(),
     }),
   },
@@ -442,7 +442,7 @@ export const components: TamboComponent[] = [
     description: "Display an issue.",
     component: IssueCard,
     propsSchema: z.object({
-      issue: z.any().optional(),
+      issue: githubIssueSchema.optional(),
       isSelected: z.boolean().optional(),
     }),
   },
@@ -451,8 +451,8 @@ export const components: TamboComponent[] = [
     description: "Grid layout for list of items.",
     component: GridLayout,
     propsSchema: z.object({
-      items: z.array(z.any()),
-      columns: z.any().optional(),
+      items: z.array(z.unknown()),
+      columns: z.unknown().optional(),
     }),
   },
   {
@@ -460,7 +460,7 @@ export const components: TamboComponent[] = [
     description: "Smart renderer for data.",
     component: ObjectRenderer,
     propsSchema: z.object({
-      data: z.any(),
+      data: z.unknown(),
     }),
   },
   {
@@ -468,7 +468,7 @@ export const components: TamboComponent[] = [
     description: "Display a pull request.",
     component: PRCard,
     propsSchema: z.object({
-      pr: z.any().optional(),
+      pr: githubPRSchema.optional(),
       isSelected: z.boolean().optional(),
     }),
   },
@@ -496,7 +496,7 @@ export const components: TamboComponent[] = [
     description: "Display a list of code search results.",
     component: CodeSearchResults,
     propsSchema: z.object({
-      items: z.array(z.any()),
+      items: z.array(z.unknown()),
       total_count: z.number().optional(),
     }),
   },
@@ -505,7 +505,7 @@ export const components: TamboComponent[] = [
     description: "Display a list of GitHub Actions workflow runs.",
     component: WorkflowRuns,
     propsSchema: z.object({
-      workflow_runs: z.array(z.any()),
+      workflow_runs: z.array(z.unknown()),
     }),
   },
   {
@@ -519,11 +519,11 @@ export const components: TamboComponent[] = [
     description: "Display a deep analysis dashboard for a repository.",
     component: RepositoryAnalysis,
     propsSchema: z.object({
-      contributors: z.array(z.any()).optional(),
-      languages: z.any().optional(),
-      activity_summary: z.array(z.any()).optional(),
-      recent_issues: z.array(z.any()).optional(),
-      recent_prs: z.array(z.any()).optional(),
+      contributors: z.array(z.unknown()).optional(),
+      languages: z.unknown().optional(),
+      activity_summary: z.array(z.unknown()).optional(),
+      recent_issues: z.array(githubIssueSchema).optional(),
+      recent_prs: z.array(githubPRSchema).optional(),
       analysis: z.object({
         health_score: z.number(),
         highlights: z.array(z.string()),
@@ -536,7 +536,7 @@ export const components: TamboComponent[] = [
     description: "Kanban board for issue management.",
     component: KanbanBoard,
     propsSchema: z.object({
-      issues: z.array(z.any()),
+      issues: z.array(githubIssueSchema),
       title: z.string().optional(),
     }),
   },
@@ -545,10 +545,10 @@ export const components: TamboComponent[] = [
     description: "Side-by-side repository comparison.",
     component: RepoComparison,
     propsSchema: z.object({
-      repo1: z.any(),
-      repo2: z.any(),
-      analysis1: z.any().optional(),
-      analysis2: z.any().optional(),
+      repo1: githubRepoSchema,
+      repo2: githubRepoSchema,
+      analysis1: z.unknown().optional(),
+      analysis2: z.unknown().optional(),
     }),
   },
   {
@@ -559,7 +559,7 @@ export const components: TamboComponent[] = [
       owner: z.string(),
       repo: z.string(),
       suggestedBody: z.string(),
-      includedPRs: z.array(z.any()),
+      includedPRs: z.array(githubPRSchema),
     }),
   },
   {
@@ -586,7 +586,7 @@ export const components: TamboComponent[] = [
         head_branch: z.string(),
         head_sha: z.string(),
         created_at: z.string(),
-        jobs: z.array(z.any()).optional(),
+        jobs: z.array(z.unknown()).optional(),
       }),
       onAnalyzeFailure: z.function().optional(),
     }),
@@ -596,7 +596,7 @@ export const components: TamboComponent[] = [
     description: "GitHub Notifications Inbox",
     component: NotificationCenter,
     propsSchema: z.object({
-      notifications: z.array(z.any()),
+      notifications: z.array(z.unknown()),
     }),
   },
   {
@@ -605,8 +605,8 @@ export const components: TamboComponent[] = [
     component: KnowledgeGraph,
     propsSchema: z.object({
       data: z.object({
-        nodes: z.array(z.any()),
-        edges: z.array(z.any()),
+        nodes: z.array(z.unknown()),
+        edges: z.array(z.unknown()),
       }),
       title: z.string().optional(),
     }),
