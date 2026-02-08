@@ -1,9 +1,9 @@
-# Flux 🚀
+# Tambo GitHub Explorer 🚀
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/f11e5a44-9fc0-4fa5-9dd8-f1d8d13d4a99" alt="GitHub Explorer Dashboard" width="100%" />
 
-  **Master your repositories conversationally with Flux.**
+  **Master your repositories conversationally with AI-powered GitHub exploration.**
   <br/>
   *Built for "The UI Strikes Back" Hackathon.*
   
@@ -12,10 +12,10 @@
 
 
 
-## 🤖 What is Flux ?
+## 🤖 What is Tambo GitHub Explorer?
 
 
-**Flux** represents the next evolution of developer tools: **Generative UI**. 
+**Tambo GitHub Explorer** represents the next evolution of GitHub tools: **Generative UI for Repository Management**. 
 
 Instead of navigating through static tabs for Issues, Pull Requests, and Insights, you simply **ask** for what you need. The application doesn't just reply with text; it **generates custom interactive interfaces** on the fly tailored to your specific intent.
 
@@ -27,20 +27,20 @@ https://github.com/user-attachments/assets/4af35274-7c53-42c7-b725-11622598ef28
 
 ## ✨ Features
 
-- **🗣️ Natural Language Interface**: Chat with your codebase as if it were a senior engineer.
-- **🎨 Generative UI**: The interface mutates based on context.
+- **🗣️ Natural Language Interface**: Chat with GitHub repositories as if talking to a senior engineer.
+- **🎨 Generative UI**: The interface mutates based on your queries and context.
 - **📋 Smart Issue Triage**: Instantly generate Kanban boards to categorize and manage issues.
 - **🔍 Intelligent Diff Viewer**: Review Pull Requests with a side-by-side comparison tool generated on demand.
 - **📊 Real-time Insights**: Visualize repository health, contributor stats, and activity trends.
-- **� Smart CI/CD Debugger**: Visualize pipeline failures with logs and AI-powered diagnosis.
-- **🔔 Notification Triage**: A dedicated inbox to filter and act on notifications efficiently.
+- **🔧 Smart CI/CD Debugger**: Visualize pipeline failures with logs and AI-powered diagnosis.
+- **🔔 Notification Triage**: A dedicated inbox to filter and act on GitHub notifications efficiently.
 - **🧠 Codebase Knowledge Graph**: Explore your project's architecture with an interactive force-directed graph.
-- **�🔐 Secure Integration**: Powered by Model Context Protocol (MCP) and fine-grained GitHub PATs.
+- **🔐 Secure Integration**: Powered by Model Context Protocol (MCP) and fine-grained GitHub PATs.
 
 ## 🏗️ How It Works
 
 ### Generative UI Flow
-The application uses **Tambo's AI** to determine the best way to represent data. It doesn't just "fetch" data; it "designs" the view.
+The application uses **Tambo's AI** to determine the best way to represent GitHub data. It doesn't just "fetch" data; it "designs" the view.
 
 ```mermaid
 graph TD
@@ -72,7 +72,7 @@ graph TD
 |-------|--------------|
 | **Frontend** | Next.js 14, React, Tailwind CSS, Framer Motion |
 | **AI & Logic** | Tambo SDK, Vercel AI SDK |
-| **Data Protocol** | Model Context Protocol (MCP) |
+| **Data Protocol** | Model Context Protocol (MCP) for GitHub |
 | **Styling** | Lucide Icons, Glassmorphism Design System |
 
 ## 🚀 Getting Started
@@ -87,8 +87,8 @@ graph TD
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/nermalcat69/flux
-   cd flux
+   git clone https://github.com/Anuragsharma15-dell/git-explorer
+   cd git-explorer
    ```
 
 2. **Install dependencies**
@@ -130,15 +130,15 @@ https://github.com/user-attachments/assets/db9ffe57-2e7e-4bd8-b63f-bf9ce9c9fdfa
 
 
 
-1. Go to GitHub Settings > Developer settings > Personal access tokens(Fine-grained tokens)
-2. Generate a new token.
+1. Go to GitHub Settings > Developer settings > Personal access tokens (Fine-grained tokens)
+2. Generate a new token with access to repositories you want to explore
 
 
 4. **Run Locally**
    ```bash
    npm run dev
    ```
-   Visit `http://localhost:3000` to start exploring.
+   Visit `http://localhost:3000` to start exploring GitHub repositories.
 
 ## 💡 Usage Examples
 
@@ -149,16 +149,16 @@ https://github.com/user-attachments/assets/db9ffe57-2e7e-4bd8-b63f-bf9ce9c9fdfa
 | **Review** | "Show me the changes in PR #123" | Split-View Code Diff |
 | **Analysis** | "What's the commit activity like this week?" | Activity Line Chart |
 | **Debug** | "Why did the build fail on run #842?" | CI/CD Pipeline Debugger |
-| **Notifications** | "Show my unread notifications" | Notification Inbox |
+| **Notifications** | "Show my unread GitHub notifications" | Notification Inbox |
 | **Architecture** | "Visualize the codebase structure" | Interactive Knowledge Graph |
 
 ## 🏆 Hackathon Context
-This project was built for **The UI Strikes Back** hackathon (Feb 2-8, 2026). It demonstrates the power of escaping static workflows in favor of intent-driven dynamic interfaces.
+This project was built for **The UI Strikes Back** hackathon (Feb 2-8, 2026). It demonstrates the power of escaping static GitHub workflows in favor of intent-driven dynamic interfaces.
 
 ---
 
 <div align="center">
   <p>Star this repo if you find it useful!</p>
-  <p>© 2026 Powered by Flux AI</p>
+  <p>© 2026 Tambo GitHub Explorer</p>
 </div>
 

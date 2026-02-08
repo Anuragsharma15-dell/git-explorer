@@ -169,11 +169,21 @@ const MessageInput = React.forwardRef<HTMLFormElement, MessageInputProps>(
         } catch (error) {
           console.error("Failed to submit message:", error);
           setDisplayValue(value);
-          setSubmitError(
-            error instanceof Error
-              ? error.message
-              : "Failed to send message. Please try again."
-          );
+
+          let errorMessage = "Failed to send message. Please try again.";
+          if (error instanceof Error) {
+            errorMessage = error.message;
+            // If the error message is "Connection error", check for more details if available on the error object
+            if (errorMessage === "Connection error" && (error as any).cause) {
+              errorMessage += `: ${(error as any).cause.message || JSON.stringify((error as any).cause)}`;
+            }
+            // Add stack trace to console for debugging "Call S..." errors
+            if (errorMessage.startsWith("Call S") || errorMessage.includes("Call stack")) {
+              console.error(error.stack);
+            }
+          }
+
+          setSubmitError(errorMessage);
 
           // Cancel the thread to reset loading state
           cancel();

@@ -1,9 +1,13 @@
 "use client";
 
-import { ChatInterface } from "@/components/chat-interface";
+import dynamic from 'next/dynamic';
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { TamboLogo } from "@/components/tambo/logo";
+
+const ChatInterface = dynamic(() => import('@/components/chat-interface').then(mod => mod.ChatInterface), {
+    ssr: false,
+});
 
 export default function ChatPage() {
     return (

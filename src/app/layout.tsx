@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>Flux - Generative GitHub Explorer</title>
+        <title>Tambo GitHub Explorer - AI-Powered Repository Management</title>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

@@ -26,7 +26,7 @@ class GitHubAPI {
 
   constructor() {
     // Token should be set via environment variable or user input
-    this.token = process.env.GITHUB_TOKEN
+    this.token = process.env.NEXT_PUBLIC_GITHUB_TOKEN || process.env.GITHUB_TOKEN;
   }
 
 
