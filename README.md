@@ -25,6 +25,21 @@ All through natural language. All with intelligent, generative UI.
 
 ---
 
+## 🎬 Demo
+
+**See it in action!** Watch the demo video to see how Tambo GitHub Explorer transforms GitHub management:
+
+<div align="center">
+  <video width="100%" controls>
+    <source src="./demo-video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+*🎥 A complete walkthrough showing natural language queries, generative UI components, and AI-powered GitHub tools in real-time.*
+
+---
+
 ## 🎯 Key Features
 
 ### 🤖 20+ AI-Powered Tools
