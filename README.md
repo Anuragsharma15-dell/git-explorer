@@ -361,7 +361,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you found this project useful, please consider giving it a ⭐️ on GitHub!
 
-**Live Demo:** [https://tambo-github-explorer.vercel.app](https:// https://git-explorer-eta.vercel.app/)
+**Live Demo:** https://git-explorer-eta.vercel.app/
 
 ---
 
