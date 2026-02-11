@@ -1,4 +1,4 @@
-# 🚀 Tambo GitHub Explorer
+eee# 🚀 Tambo GitHub Explorer
 
 > **AI-Powered GitHub Repository Management with Generative UI**
 
@@ -367,10 +367,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-**Built by:** [Your Name]
-**Email:** your.email@example.com
-**Twitter:** [@yourhandle](https://twitter.com/yourhandle)
-**GitHub:** [@yourusername](https://github.com/yourusername)
+**Built by:** [Anurag sharma]
+**Email:** anuragf863@gmail.com
 
 ---
 
@@ -378,7 +376,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you found this project useful, please consider giving it a ⭐️ on GitHub!
 
-**Live Demo:** [https://tambo-github-explorer.vercel.app](https://tambo-github-explorer.vercel.app)
+**Live Demo:** https://git-explorer-eta.vercel.app/
 
 ---
 
